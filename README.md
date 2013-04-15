@@ -3,7 +3,7 @@ Controle de Atetlas
 
 Sistema de cadastro de atletas (para práticas de conceitos de orientação a
 objetos e técnicas de programação).
-
+Alteração para inclusão da modalidade Tenista
 
 Desenvolvimento
 ---------------
@@ -15,7 +15,7 @@ Autores
 ------
 
 Paulo Meirelles
-
+João Gabriel de Britto e Silva
 
 Licença
 -------
