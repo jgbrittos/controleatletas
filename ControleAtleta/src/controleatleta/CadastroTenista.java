@@ -21,6 +21,7 @@ public class CadastroTenista extends javax.swing.JDialog {
     private HashMap<Integer, Integer> vitoriasAno;
     private HashMap<Integer, Integer> derrotasAno;
     private Patrocinador patrocinador;
+    private ControleTenista controleTenista;
     
     public CadastroTenista(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -44,6 +45,7 @@ public class CadastroTenista extends javax.swing.JDialog {
         jButtonAdicionarPatrocinadores = new javax.swing.JButton();
         jButtonTitulosGanhos = new javax.swing.JButton();
         jButtonVitoriasDerrotasAno = new javax.swing.JButton();
+        jButtonPesquisarTenista = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -92,17 +94,25 @@ public class CadastroTenista extends javax.swing.JDialog {
             }
         });
 
+        jButtonPesquisarTenista.setText("Pesquisar");
+        jButtonPesquisarTenista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarTenistaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonPesquisarTenista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(173, 173, 173)
                                 .addComponent(jButtonSalvarTenista, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
                                 .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -122,7 +132,7 @@ public class CadastroTenista extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldFortunaPropagandas)
                                     .addComponent(jComboBoxTipoQuadra, 0, 290, Short.MAX_VALUE))))
-                        .addContainerGap(34, Short.MAX_VALUE))
+                        .addGap(34, 34, 34))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButtonTitulosGanhos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -151,15 +161,21 @@ public class CadastroTenista extends javax.swing.JDialog {
                     .addComponent(jComboBoxTipoQuadra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonVitoriasDerrotasAno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonTitulosGanhos)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonAdicionarPatrocinadores)
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSalvarTenista)
-                    .addComponent(jButtonCancelar))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonSalvarTenista)
+                            .addComponent(jButtonCancelar))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonPesquisarTenista)
+                        .addContainerGap(40, Short.MAX_VALUE))))
         );
 
         pack();
@@ -249,6 +265,24 @@ public class CadastroTenista extends javax.swing.JDialog {
         cadastro.setVisible(true);
     }//GEN-LAST:event_jButtonVitoriasDerrotasAnoActionPerformed
 
+    private void jButtonPesquisarTenistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarTenistaActionPerformed
+        String pesquisa = JOptionPane.showInputDialog("Informe o nome do Tenista.");
+        if (pesquisa != null) {
+            this.pesquisarTenista(pesquisa);
+        }
+    }//GEN-LAST:event_jButtonPesquisarTenistaActionPerformed
+
+    private void pesquisarTenista(String nome) {
+        Tenista tenistaPesquisado = controleTenista.pesquisar(nome);
+
+        if (tenistaPesquisado == null) {
+            JOptionPane.showMessageDialog(this, "Tenista não encontrado.", "Atenção", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Tenista encontrado com sucesso!.", "Atenção", JOptionPane.INFORMATION_MESSAGE);
+            //this.umTenista = tenistaPesquisado;
+        }
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -290,6 +324,7 @@ public class CadastroTenista extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarPatrocinadores;
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonPesquisarTenista;
     private javax.swing.JButton jButtonSalvarTenista;
     private javax.swing.JButton jButtonTitulosGanhos;
     private javax.swing.JButton jButtonVitoriasDerrotasAno;
