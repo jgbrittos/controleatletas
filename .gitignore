@@ -1,2 +1,5 @@
-/ControleAtleta/nbproject/private/
-/ControleAtleta/build/
+
+*.class
+/ControleAtleta/nbproject/*.class
+*.class
+./ControleAtleta/build/classes/controleatleta/*.class
