@@ -87,11 +87,9 @@ public class CadastroPatrocinadores extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCancelarPatrocinadorActionPerformed
 
     private void jButtonAdicionarPatrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarPatrocinadorActionPerformed
-    
-        ValidaDados dados = null;
         
         try{
-            dados.validarNome(jTextFieldNomePatrocinador.getText());
+                 ValidaDados.validarNome(jTextFieldNomePatrocinador.getText());
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);
         }

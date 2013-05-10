@@ -103,14 +103,13 @@ public class CadastroTitulosGanhos extends javax.swing.JDialog {
 
     private void jButtonSalvarTitulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarTitulosActionPerformed
         
-        ValidaDados dados = null;
         String nome;
         int quantidade;
         
         try {
             
-            dados.validarNome(jTextFieldNomeTitulo.getText());
-            dados.validarQuantidade(jTextFieldQuantidadeTitulo.getText());       
+           ValidaDados.validarNome(jTextFieldNomeTitulo.getText());
+           ValidaDados.validarQuantidade(jTextFieldQuantidadeTitulo.getText());       
             
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);

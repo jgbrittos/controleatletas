@@ -114,30 +114,25 @@ public class CadastroVitoriasDerrotasAno extends javax.swing.JDialog {
 
     private void jButtonSalvarVitoriasDerrotasAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarVitoriasDerrotasAnoActionPerformed
         
-        ValidaDados dados = null;
-        int vitorias;
-        int derrotas;
-        int ano;
-        
         try {
             
-            dados.validarAno(jTextFieldAno.getText());       
-            dados.validarQuantidade(jTextFieldNumVitorias.getText());
-            dados.validarQuantidade(jTextFieldNumDerrotas.getText());       
+            ValidaDados.validarAno(jTextFieldAno.getText());       
+            ValidaDados.validarQuantidade(jTextFieldNumVitorias.getText());
+            ValidaDados.validarQuantidade(jTextFieldNumDerrotas.getText());       
             
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);
         }
         
         
-        ano = Integer.parseInt(jTextFieldAno.getText());
-        vitorias = Integer.parseInt(jTextFieldNumVitorias.getText());
-        derrotas = Integer.parseInt(jTextFieldNumDerrotas.getText());
+        int anoDasVitoriasEDerrotas = Integer.parseInt(jTextFieldAno.getText());
+        int numeroDeVitorias = Integer.parseInt(jTextFieldNumVitorias.getText());
+        int numeroDeDerrotas = Integer.parseInt(jTextFieldNumDerrotas.getText());
         
         vitoriasAno = new HashMap<Integer, Integer>();
         derrotasAno = new HashMap<Integer, Integer>();
-        vitoriasAno.put(ano, vitorias);
-        derrotasAno.put(ano, derrotas);
+        vitoriasAno.put(anoDasVitoriasEDerrotas, numeroDeVitorias);
+        derrotasAno.put(anoDasVitoriasEDerrotas, numeroDeDerrotas);
       
         this.setVisible(false);
         
