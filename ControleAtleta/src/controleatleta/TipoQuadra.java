@@ -3,6 +3,13 @@ package controleatleta;
 
 public class TipoQuadra {
     
+    public static final byte HARD_COURT_INDICE = 0;
+    public static final byte CLAY_INDICE = 1;
+    public static final byte GRASS_INDICE = 2;
+    public static final String HARD_COURT_VALOR = "Hard Court";
+    public static final String CLAY_VALOR = "Clay";
+    public static final String GRASS_VALOR = "Grass";
+    
     private String nome;
 
     public TipoQuadra(String nome){

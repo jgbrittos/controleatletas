@@ -8,12 +8,7 @@ import java.util.HashMap;
 
 public class CadastroTenista extends javax.swing.JDialog {
 
-    private final byte HARD_COURT_INDICE = 0;
-    private final byte CLAY_INDICE = 1;
-    private final byte GRASS_INDICE = 2;
-    private final String HARD_COURT_VALOR = "Hard Court";
-    private final String CLAY_VALOR = "Clay";
-    private final String GRASS_VALOR = "Grass";
+    
     private Tenista umTenista;
     private TipoQuadra quadra;
     private ArrayList<Patrocinador> patrocinadores;
@@ -231,16 +226,16 @@ public class CadastroTenista extends javax.swing.JDialog {
         umTenista.setDerrotasPorAno(derrotasAno);
         
         switch (jComboBoxTipoQuadra.getSelectedIndex()) {
-            case HARD_COURT_INDICE:
-                quadra = new TipoQuadra(HARD_COURT_VALOR);
+            case TipoQuadra.HARD_COURT_INDICE:
+                quadra = new TipoQuadra(TipoQuadra.HARD_COURT_VALOR);
                 umTenista.setQuadraPreferida(quadra);
                 break;
-            case CLAY_INDICE:
-                quadra = new TipoQuadra(CLAY_VALOR);
+            case TipoQuadra.CLAY_INDICE:
+                quadra = new TipoQuadra(TipoQuadra.CLAY_VALOR);
                 umTenista.setQuadraPreferida(quadra);
                 break;
-            case GRASS_INDICE:
-                quadra = new TipoQuadra(GRASS_VALOR);
+            case TipoQuadra.GRASS_INDICE:
+                quadra = new TipoQuadra(TipoQuadra.GRASS_VALOR);
                 umTenista.setQuadraPreferida(quadra);
                 break;
         }
