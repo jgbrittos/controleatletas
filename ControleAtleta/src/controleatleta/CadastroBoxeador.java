@@ -12,18 +12,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class CadastroBoxeador extends javax.swing.JFrame {
 
-    private final byte SEXO_MASCULINO_INDICE = 0;
-    private final byte SEXO_FEMININO_INDICE = 1;
-    private final char SEXO_MASCULINO_VALOR = 'M';
-    private final char SEXO_FEMININO_VALOR = 'F';
-    private final byte CATEGORIA_AMADOR_INDICE = 0;
-    private final byte CATEGORIA_PROFISSIONAL_INDICE = 1;
-    private final char CATEGORIA_AMADOR_VALOR = 'A';
-    private final char CATEGORIA_PROFISSIONAL_VALOR = 'P';
-    private final byte ESTILO_ORTODOXO_INDICE = 0;
-    private final byte ESTILO_SOUTHPAW_INDICE = 1;
-    private final char ESTILO_ORTODOXO_VALOR = 'O';
-    private final char ESTILO_SOUTHPAW_VALOR = 'S';
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private ControleBoxeador controleBoxeador;
     private Boxeador umBoxeador;
@@ -122,29 +110,29 @@ public class CadastroBoxeador extends javax.swing.JFrame {
         }
 
         switch (umBoxeador.getSexo()) {
-            case SEXO_MASCULINO_VALOR:
-                jComboBoxSexo.setSelectedIndex(SEXO_MASCULINO_INDICE);
+            case Boxeador.SEXO_MASCULINO_VALOR:
+                jComboBoxSexo.setSelectedIndex(Boxeador.SEXO_MASCULINO_INDICE);
                 break;
-            case SEXO_FEMININO_VALOR:
-                jComboBoxSexo.setSelectedIndex(SEXO_FEMININO_INDICE);
+            case Boxeador.SEXO_FEMININO_VALOR:
+                jComboBoxSexo.setSelectedIndex(Boxeador.SEXO_FEMININO_INDICE);
                 break;
         }
 
         switch (umBoxeador.getCategoria()) {
-            case CATEGORIA_AMADOR_VALOR:
-                jComboBoxCategoria.setSelectedIndex(CATEGORIA_AMADOR_INDICE);
+            case Boxeador.CATEGORIA_AMADOR_VALOR:
+                jComboBoxCategoria.setSelectedIndex(Boxeador.CATEGORIA_AMADOR_INDICE);
                 break;
-            case CATEGORIA_PROFISSIONAL_VALOR:
-                jComboBoxCategoria.setSelectedIndex(CATEGORIA_PROFISSIONAL_INDICE);
+            case Boxeador.CATEGORIA_PROFISSIONAL_VALOR:
+                jComboBoxCategoria.setSelectedIndex(Boxeador.CATEGORIA_PROFISSIONAL_INDICE);
                 break;
         }
 
         switch (umBoxeador.getEstilo()) {
-            case ESTILO_ORTODOXO_VALOR:
-                jComboBoxEstilo.setSelectedIndex(ESTILO_ORTODOXO_INDICE);
+            case Boxeador.ESTILO_ORTODOXO_VALOR:
+                jComboBoxEstilo.setSelectedIndex(Boxeador.ESTILO_ORTODOXO_INDICE);
                 break;
-            case ESTILO_SOUTHPAW_VALOR:
-                jComboBoxEstilo.setSelectedIndex(ESTILO_SOUTHPAW_INDICE);
+            case Boxeador.ESTILO_SOUTHPAW_VALOR:
+                jComboBoxEstilo.setSelectedIndex(Boxeador.ESTILO_SOUTHPAW_INDICE);
                 break;
         }
 
@@ -349,29 +337,29 @@ public class CadastroBoxeador extends javax.swing.JFrame {
         umBoxeador.setTotalVitorias(Integer.parseInt(jTextFieldTotalVitorias.getText()));
 
         switch (jComboBoxSexo.getSelectedIndex()) {
-            case SEXO_MASCULINO_INDICE:
-                umBoxeador.setSexo(SEXO_MASCULINO_VALOR);
+            case Boxeador.SEXO_MASCULINO_INDICE:
+                umBoxeador.setSexo(Boxeador.SEXO_MASCULINO_VALOR);
                 break;
-            case SEXO_FEMININO_INDICE:
-                umBoxeador.setSexo(SEXO_FEMININO_VALOR);
+            case Boxeador.SEXO_FEMININO_INDICE:
+                umBoxeador.setSexo(Boxeador.SEXO_FEMININO_VALOR);
                 break;
         }
 
         switch (jComboBoxCategoria.getSelectedIndex()) {
-            case CATEGORIA_AMADOR_INDICE:
-                umBoxeador.setCategoria(CATEGORIA_AMADOR_VALOR);
+            case Boxeador.CATEGORIA_AMADOR_INDICE:
+                umBoxeador.setCategoria(Boxeador.CATEGORIA_AMADOR_VALOR);
                 break;
-            case CATEGORIA_PROFISSIONAL_INDICE:
-                umBoxeador.setCategoria(CATEGORIA_PROFISSIONAL_VALOR);
+            case Boxeador.CATEGORIA_PROFISSIONAL_INDICE:
+                umBoxeador.setCategoria(Boxeador.CATEGORIA_PROFISSIONAL_VALOR);
                 break;
         }
 
         switch (jComboBoxEstilo.getSelectedIndex()) {
-            case ESTILO_ORTODOXO_INDICE:
-                umBoxeador.setEstilo(ESTILO_ORTODOXO_VALOR);
+            case Boxeador.ESTILO_ORTODOXO_INDICE:
+                umBoxeador.setEstilo(Boxeador.ESTILO_ORTODOXO_VALOR);
                 break;
-            case ESTILO_SOUTHPAW_INDICE:
-                umBoxeador.setEstilo(ESTILO_SOUTHPAW_VALOR);
+            case Boxeador.ESTILO_SOUTHPAW_INDICE:
+                umBoxeador.setEstilo(Boxeador.ESTILO_SOUTHPAW_VALOR);
                 break;
         }
 
@@ -401,11 +389,11 @@ public class CadastroBoxeador extends javax.swing.JFrame {
     private void atualizarCategoriaPeso() {
         char categoria;
         switch (jComboBoxCategoria.getSelectedIndex()) {
-            case CATEGORIA_AMADOR_INDICE:
-                categoria = CATEGORIA_AMADOR_VALOR;
+            case Boxeador.CATEGORIA_AMADOR_INDICE:
+                categoria = Boxeador.CATEGORIA_AMADOR_VALOR;
                 break;
-            case CATEGORIA_PROFISSIONAL_INDICE:
-                categoria = CATEGORIA_PROFISSIONAL_VALOR;
+            case Boxeador.CATEGORIA_PROFISSIONAL_INDICE:
+                categoria = Boxeador.CATEGORIA_PROFISSIONAL_VALOR;
                 break;
             default:
                 return;

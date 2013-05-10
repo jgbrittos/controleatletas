@@ -4,6 +4,20 @@ import java.util.ArrayList;
 
 public class Boxeador extends Atleta {
 
+    
+    public static final byte SEXO_MASCULINO_INDICE = 0;
+    public static final byte SEXO_FEMININO_INDICE = 1;
+    public static final char SEXO_MASCULINO_VALOR = 'M';
+    public static final char SEXO_FEMININO_VALOR = 'F';
+    public static final byte CATEGORIA_AMADOR_INDICE = 0;
+    public static final byte CATEGORIA_PROFISSIONAL_INDICE = 1;
+    public static final char CATEGORIA_AMADOR_VALOR = 'A';
+    public static final char CATEGORIA_PROFISSIONAL_VALOR = 'P';
+    public static final byte ESTILO_ORTODOXO_INDICE = 0;
+    public static final byte ESTILO_SOUTHPAW_INDICE = 1;
+    public static final char ESTILO_ORTODOXO_VALOR = 'O';
+    public static final char ESTILO_SOUTHPAW_VALOR = 'S';
+    
     private char categoria; // A=Amador P=Profissional
     private char estilo; // O=Ortodoxo(destro) S=Southpaw(canhoto)
     private ArrayList<Premiacao> premiacoes;
