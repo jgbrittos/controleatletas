@@ -113,12 +113,7 @@ public class CadastroVitoriasDerrotasAno extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarVitoriasDerrotasAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarVitoriasDerrotasAnoActionPerformed
-        
-        ValidaDados dados = null;
-        int vitorias;
-        int derrotas;
-        int ano;
-        
+       
         try {
             
             ValidaDados.validarAno(jTextFieldAno.getText());       
@@ -130,14 +125,14 @@ public class CadastroVitoriasDerrotasAno extends javax.swing.JDialog {
         }
         
         
-        ano = Integer.parseInt(jTextFieldAno.getText());
-        vitorias = Integer.parseInt(jTextFieldNumVitorias.getText());
-        derrotas = Integer.parseInt(jTextFieldNumDerrotas.getText());
+        int anoDosJogos = Integer.parseInt(jTextFieldAno.getText());
+        int vitoriasDoAno = Integer.parseInt(jTextFieldNumVitorias.getText());
+        int derrotasDoAno = Integer.parseInt(jTextFieldNumDerrotas.getText());
         
         vitoriasAno = new HashMap<Integer, Integer>();
         derrotasAno = new HashMap<Integer, Integer>();
-        vitoriasAno.put(ano, vitorias);
-        derrotasAno.put(ano, derrotas);
+        vitoriasAno.put(anoDosJogos, vitoriasDoAno);
+        derrotasAno.put(anoDosJogos, derrotasDoAno);
       
         this.setVisible(false);
         
