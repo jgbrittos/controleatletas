@@ -7,10 +7,6 @@ import java.util.HashMap;
 
 public class CadastroTenista extends javax.swing.JDialog {
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> 48a47197093014719dee6361ebf902a52076c6b3
     private Tenista umTenista;
     private TipoQuadra quadra;
     private ArrayList<Patrocinador> patrocinadores;

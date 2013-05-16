@@ -2,11 +2,7 @@
 package controleatleta;
 
 public class TipoQuadra {
-    
-<<<<<<< HEAD
-    
-=======
->>>>>>> 48a47197093014719dee6361ebf902a52076c6b3
+
     public static final byte HARD_COURT_INDICE = 0;
     public static final byte CLAY_INDICE = 1;
     public static final byte GRASS_INDICE = 2;
