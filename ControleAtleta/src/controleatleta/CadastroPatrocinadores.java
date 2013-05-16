@@ -91,7 +91,7 @@ public class CadastroPatrocinadores extends javax.swing.JDialog {
         ValidaDados dados = null;
         
         try{
-            dados.validarNome(jTextFieldNomePatrocinador.getText());
+            ValidaDados.validarNome(jTextFieldNomePatrocinador.getText());
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);
         }

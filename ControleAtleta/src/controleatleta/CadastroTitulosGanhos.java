@@ -109,8 +109,8 @@ public class CadastroTitulosGanhos extends javax.swing.JDialog {
         
         try {
             
-            dados.validarNome(jTextFieldNomeTitulo.getText());
-            dados.validarQuantidade(jTextFieldQuantidadeTitulo.getText());       
+            ValidaDados.validarNome(jTextFieldNomeTitulo.getText());
+            ValidaDados.validarQuantidade(jTextFieldQuantidadeTitulo.getText());       
             
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);

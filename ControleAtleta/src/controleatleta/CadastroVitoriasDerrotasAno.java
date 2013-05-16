@@ -121,9 +121,9 @@ public class CadastroVitoriasDerrotasAno extends javax.swing.JDialog {
         
         try {
             
-            dados.validarAno(jTextFieldAno.getText());       
-            dados.validarQuantidade(jTextFieldNumVitorias.getText());
-            dados.validarQuantidade(jTextFieldNumDerrotas.getText());       
+            ValidaDados.validarAno(jTextFieldAno.getText());       
+            ValidaDados.validarQuantidade(jTextFieldNumVitorias.getText());
+            ValidaDados.validarQuantidade(jTextFieldNumDerrotas.getText());       
             
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);

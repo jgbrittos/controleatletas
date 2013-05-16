@@ -206,9 +206,9 @@ public class CadastroTenista extends javax.swing.JDialog {
         
         try {
             
-            dados.validarRank(jTextFieldPosRankMundial.getText());
-            dados.validarFortuna(jTextFieldFortunaJogos.getText());       
-            dados.validarFortuna(jTextFieldFortunaPropagandas.getText());       
+            ValidaDados.validarRank(jTextFieldPosRankMundial.getText());
+            ValidaDados.validarFortuna(jTextFieldFortunaJogos.getText());       
+            ValidaDados.validarFortuna(jTextFieldFortunaPropagandas.getText());       
    
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERRO!", JOptionPane.INFORMATION_MESSAGE);
