@@ -1,7 +1,5 @@
 package ValidaDados;
 
-import java.util.Date;
-
 public class ValidaDados {
 
     public static void validarNome(String nome) throws Exception {
